@@ -1,4 +1,6 @@
 <?php
+session_start();
+
   $title=$_POST['title'];
   $content=$_POST['content'];
   $author=$_SESSION['email'];
@@ -6,7 +8,6 @@
   $pname=rand(1000,10000)."-".$_FILES['file']['name'];
   $tname=$_FILES['file']['tmp_name'];
   $uploads_dir='uploads';
-  
 
   move_uploaded_file($tname,$uploads_dir.'/'.$pname);
 
@@ -19,5 +20,5 @@
     echo "POSTED!";
     header('location:home.php?posted=1');
   }
- 
+
  ?>
