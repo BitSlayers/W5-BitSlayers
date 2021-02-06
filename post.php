@@ -47,9 +47,8 @@ if(!isset($_SESSION['email'])){
 		<input type="text" class="form-control" name="content" placeholder="Content">
 	-->
 			<br>
-      <label for="author">Author</label>
-  		<input type="text" class="form-control" name="author" id='title'>
-      <br>
+
+  		
 			<label for="file">Media</label>
 			<input type="file" class="form-control" name="file" id='title'>
 			<br>
