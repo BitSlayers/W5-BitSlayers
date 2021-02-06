@@ -43,8 +43,19 @@ function getSpecificPosts(){
       <h3 class="cmname">'.$row2['dates'].'</h3>
       <hr width="200px">
       <p class="cmcontent">'.$row2['comment'].'</p>
-      </div>
       ';
+      if($_SESSION['email']===$row2['email'])
+      {
+        echo '
+        <a class="btnLike" style="width:6%;" href="deleteComment.php?id='.$row["id"].'">DELETE</a>
+        <br>
+        </div>
+        ';
+      }
+      else{
+        echo'
+        </div>';
+      }
   }
 }
 }
