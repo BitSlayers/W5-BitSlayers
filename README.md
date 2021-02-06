@@ -10,3 +10,9 @@ EduPortal is a hub for connecting teachers and students on a common platform to 
   - Backend:PHP , MYSQL
   - Server Stack: XAMPP v3.2.4
   - Misc. Frameworks:Bootstrap
+
+
+# Install Instructions
+  - Put all the contents of the repository to your **xampp/htdocs/**
+  - Import DB's from **databaseExports** folder to your phpmyadminpanel
+  - Navigate to [localhost](https://localhost/W5-BitSlayers/index.php)(Assuming you haven't changed the repo name or manually navigate to localhost)
