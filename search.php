@@ -49,7 +49,7 @@ session_start();
     <br>
     <div class ="interact">
     <a class="btnLike" href="like.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
-
+    <a class="btnLike" href="comment.php?id='.$row["id"].'"></span>COMMENT</a>
     </div>
     </div>
     ';
