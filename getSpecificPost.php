@@ -21,7 +21,7 @@ function getSpecificPosts(){
     <a class="btnLike" href="like.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
     </div>
 
-    <div class="searchbar">
+    <div class="searchbar2">
     <form action="addComment.php?id='.$row["id"].'" method="POST" id="form1">
     	<br>
       <p class="posttitle" style="">Add a comment</p>
