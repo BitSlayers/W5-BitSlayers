@@ -18,6 +18,8 @@ function getMyPosts(){
       <div class ="interact">
       <a class="btnLike" href="like.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
       <a class="btnLike" href="comment.php?id='.$row["id"].'"></span>COMMENT</a>
+      <a class="btnLike" href="delete.php?id='.$row["id"].'"></span>DELETE</a>
+
       </div>
       </div>
       ';
