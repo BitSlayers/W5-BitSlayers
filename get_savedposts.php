@@ -1,0 +1,24 @@
+<?php
+
+function getMyPosts(){
+  $con = mysqli_connect("localhost","root","","posts");
+  $user=$_SESSION['email'];
+  $query = "SELECT * FROM `posttable` where author='$user'";
+  $result=mysqli_query($con,$query);
+    while($row=mysqli_fetch_array($result)){
+      echo '
+      <div class="container">
+      <h3 class="posttitle">'.$row['title'].'</h3>
+      <p class="postcontent">Posted By : '.$row['author'].'</p>
+      <br>
+      <hr width="200px">
+      <p class="postcontent">'.$row['content'].'<p>
+      <img src="uploads/'.$row['image'].'"class="imgt" ?>
+      <br>
+      <div class ="interact">
+      <a class="btnLike" href="like.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
+      </div>
+      </div>
+      ';
+  }
+}
