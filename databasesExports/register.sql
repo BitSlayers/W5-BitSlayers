@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2021 at 08:22 PM
+-- Generation Time: Feb 07, 2021 at 06:44 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -39,11 +39,17 @@ CREATE TABLE `regtable` (
 
 INSERT INTO `regtable` (`email`, `password`, `cpassword`) VALUES
 ('ace', '123', '123'),
+('admin', 'adm123', 'adm123'),
+('johndoe', '1234', '1234'),
+('johnsmith', '1234', '1234'),
 ('lavleen', '1234', '1234'),
 ('lavleen@test.com', '123456', '123456'),
 ('mayur', '1234', '1234'),
 ('t1', '1234', '1234'),
 ('t2', '1234', '1234'),
+('testu', '12345', '12345'),
+('testuser1', '1234', '1234'),
+('user1', '1234', '1234'),
 ('v1', '1234', '1234');
 
 --

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2021 at 12:52 PM
+-- Generation Time: Feb 07, 2021 at 06:44 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -39,15 +39,15 @@ CREATE TABLE `postcomments` (
 --
 
 INSERT INTO `postcomments` (`postid`, `email`, `comment`, `dates`) VALUES
-(2, 'mayur', 'Hey,Thanks for the post i had the same doubt!', NULL),
-(2, 'mayur', 'Can you provide more resources?', NULL),
 (6, 'lavleen', 'The Final Answer of 2nd one is 42 right?', NULL),
 (5, 'lavleen', 'I think the second step is wrong!', '2021-02-06'),
 (1, 'lavleen', 'Can You give the solution for second one?', '2021-02-06'),
 (4, 'lavleen', 'Very Challenging Questions!', '2021-02-06'),
 (4, 'lavleen', 'I think soln of Q11 is Option B', '2021-02-06'),
 (14, 'user1', 'This QB is awesome!', '2021-02-07'),
-(17, 'mayur', 'Super Helpful,Thanks :)', '2021-02-07');
+(17, 'ace', 'hey there!', '2021-02-07'),
+(19, 'mayur', 'Thank you for this!', '2021-02-07'),
+(17, 'admin', 'hello there!', '2021-02-07');
 
 -- --------------------------------------------------------
 
@@ -74,8 +74,10 @@ INSERT INTO `postlikes` (`email`, `postid`) VALUES
 ('user1', 14),
 ('ace', 2),
 ('ace', 15),
-('ace', 17),
-('ace', 4);
+('ace', 4),
+('johndoe', 2),
+('mayur', 2),
+('mayur', 19);
 
 -- --------------------------------------------------------
 
@@ -99,12 +101,11 @@ CREATE TABLE `posttable` (
 --
 
 INSERT INTO `posttable` (`title`, `content`, `author`, `image`, `id`, `likes`, `dislikes`, `tag`) VALUES
-('Quantitative Problems for Practice', '', 'ace', '9317-d1.png', 1, 1, 0, 'Aptitude'),
-('T.O.C State Transition Diagram (Help Needed!)', '', 'ace', '3367-d2.png', 2, 1, 0, 'toc'),
-('Quantitative Problems for Practice(Part-2)', '', 'ace', '7494-d3.png', 4, 1, 0, 'Aptitude'),
+('T.O.C State Transition Diagram (Help Needed!)', '', 'ace', '3367-d2.png', 2, 3, 0, 'toc'),
 ('JEE Mains 2013 Practice Problems (Second Set)', '', 'Lavleen', '2485-jee2.png', 6, 3, 0, 'jee'),
 ('Jee Main QP', '', 'user1', '5701-d3.png', 14, 1, 0, 'jee'),
-('Integration Formula List', '', 'ace', '1175-intge.gif', 17, 1, 0, 'calculus');
+('Integration Formula List', '', 'ace', '1175-intge.gif', 17, 0, 0, 'calculus'),
+('Jee mains QP 2', '', 'mayur', '1890-d2.png', 19, 1, 0, 'jee');
 
 -- --------------------------------------------------------
 
@@ -181,8 +182,7 @@ CREATE TABLE `projecttable2` (
 --
 
 INSERT INTO `projecttable2` (`title`, `content`, `author`, `image`, `id`, `likes`, `dislikes`, `tags`) VALUES
-('GameDev Project Idea(Top Down Shooter)', 'Polymans Adventure is a Top down shooter with Low-Poly 3D Art style made using Unity Engine standard render pipe line.With the use of simple art styles and graphics, the game features fluid and smooth gameplay. \r\n', 'ace', '', 2, 1, 0, 0),
-('Daredevil', 'In publishings and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.', 'ace', '', 3, 0, 0, 0);
+('GameDev Project Idea(Top Down Shooter)', 'Polymans Adventure is a Top down shooter with Low-Poly 3D Art style made using Unity Engine standard render pipe line.With the use of simple art styles and graphics, the game features fluid and smooth gameplay. \r\n', 'ace', '', 2, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -228,13 +228,13 @@ ALTER TABLE `projecttable2`
 -- AUTO_INCREMENT for table `posttable`
 --
 ALTER TABLE `posttable`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `projecttable2`
 --
 ALTER TABLE `projecttable2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
