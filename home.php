@@ -31,16 +31,16 @@ if(!isset($_SESSION['email'])){
 		</div>
 </div>
 
-<div class="searchbar">
-<form method="POST" id="form1">
-	<br>
-	<p class="posttitle" style="">Welcome to EduPortal!</p>
-	<hr width='200px'>
-	<p class="postcontent" style="">FILTER POSTS BY</p>
-	<a class="btnLike" href="home.php?newest=1">NEWEST</a>
-	<a class="btnLike" href="home.php">POPULAR</a>
 
-	<hr width='200px'>
+<div class="searchbar">
+<br>
+<p class="posttitle" style="">Welcome to EduPortal!</p>
+<form method="POST" id="form1">
+	<hr width='350px'>
+	<p class="postcontent" style="">MAKE A POST</p>
+	<a class="btnLike" href="post.php">DISCUSSION</a>
+	<a class="btnLike" href="post_project.php">PROJECTS</a>
+	<br><br>
 </form>
 
 <form action='search.php' method="POST" id="form1">
@@ -49,6 +49,15 @@ if(!isset($_SESSION['email'])){
   <br>
 	<button type="submit" class="btn btn-primary" id='lgn'>Go</button>
 </form>
+
+<form method="POST" id="form1">
+<br>	<p class="postcontent" style="">FILTER POSTS BY</p>
+	<a class="btnLike" href="home.php?newest=1">NEWEST</a>
+	<a class="btnLike" href="home.php?popular=1">POPULAR</a>
+	<a class="btnLike" href="home.php?projects=1">PROJECTS</a>
+	<hr width='350px'>
+	</form>
+
 </div>
 
 <?php
@@ -64,6 +73,17 @@ if(isset($_GET['newest'])==true){
 	require_once('get_post.php');
 	getNewPosts();
 }
+
+if(isset($_GET['projects'])==true){
+	require_once('get_post.php');
+	getProjects();
+}
+else{
+	require_once('get_post.php');
+	getPosts();
+
+}
+
  ?>
 
 	<!--
@@ -80,9 +100,6 @@ if(isset($_GET['newest'])==true){
 -->
 <div class="master-container">
 	<?php
-	require_once('get_post.php');
-	getPosts();
-
 	 ?>
 </div>
 </body>

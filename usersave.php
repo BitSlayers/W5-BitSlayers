@@ -34,24 +34,16 @@ if(!isset($_SESSION['email'])){
 <form action='' method="POST" id="form1">
 	<br>
 	<p class="posttitle" style=""><?php echo $_SESSION["email"];?>'s PROFILE</p>
-	<hr width='200px'>
+	<hr width='250px'>
 	<p class="postcontent" style="">MY ACTIVITIES</p>
 	<a class="btnLike" href="usersave.php">DISCUSSIONS</a>
-	<a class="btnLike" href="usersave_comments.php">COMMENTS</a>
-	<hr width='200px'>
+	<a class="btnLike" href="usersave.php?comment=1">COMMENTS</a>
+	<a class="btnLike" href="usersave.php?projects=1">PROJECTS</a>
+	<hr width='250px'>
 </form>
 </div>
 
 
-<?php
-if(isset($_GET['posted'])==true){
-	echo "<p class ='success'>Posted Sucessfully!</p>";
-}
-
-if(isset($_GET['upvoted'])==true){
-	echo "<p class ='success'>Already Upvoted!</p>";
-}
- ?>
 
 	<!--
 	<p class='title'>Posts</p>
@@ -68,11 +60,37 @@ if(isset($_GET['upvoted'])==true){
 <div class="master-container">
 
 	<?php
-	require_once('get_savedposts.php');
-	getMyPosts();
+	if(isset($_GET['posted'])==true){
+		echo "<p class ='success'>Posted Sucessfully!</p>";
+	}
+
+
+	if(isset($_GET['upvoted'])==true){
+		echo "<p class ='success'>Already Upvoted!</p>";
+	}
+
+	if(isset($_GET['comment'])==true){
+		require_once('get_savedposts.php');
+		getMyComments();
+		getMyProjComments();
+	}
+
+	else if(isset($_GET['projects'])==true){
+		require_once('get_savedposts.php');
+		getMyProj();
+	}
+
+	else{
+		require_once('get_savedposts.php');
+		getMyPosts();
+
+	}
+
 
 
 	 ?>
+
+
 </div>
 </body>
 </html>

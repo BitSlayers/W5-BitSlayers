@@ -16,6 +16,7 @@ if(!isset($_SESSION['email'])){
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
 		<link href="styles/inprof.css" rel='stylesheet'>
 
 	</head>
@@ -30,46 +31,32 @@ if(!isset($_SESSION['email'])){
 	<a href="post.php">New Post</a>
 </div>
 
-<div class="searchbar">
-<form action='' method="POST" id="form1">
-	<br>
-	<p class="posttitle" style=""><?php echo $_SESSION["email"];?>'s PROFILE</p>
-	<hr width='200px'>
-	<p class="postcontent" style="">MY ACTIVITIES</p>
-	<a class="btnLike" href="usersave.php">DISCUSSIONS</a>
-	<a class="btnLike" href="usersave_comments.php">COMMENTS</a>
-	<hr width='200px'>
-</form>
+<div class="container">
+	<p class='title'>New Project Pitch</p>
+  <hr width='250px'>
+  <p class='title2'>Convey your project idea with an awesome video & connect with peers!</p>
+  <br>
+  <form action='insert_project.php' method="POST"  enctype="multipart/form-data" id="form1">
+  	<div class="formgroup">
+      <label for="Title">Project Title</label>
+  		<input type="text" class="form-control" name="title" id='title'>
+      <br>
+      <label for="content">Content</label>
+			<textarea class="contentField" name="content" rows="4" cols="50" id="textarea"></textarea>
+
+		<!--
+		<input type="text" class="form-control" name="content" placeholder="Content">
+	-->
+			<br>
+			<label for="file">Tag/Category</label>
+			<input type="text" class="form-control" name="tag" id='title'>
+
+		<br><br>
+    <button type="submit" class="btn btn-primary" id='lgn'>Post</button>
+    </div>
+  </form>
+
 </div>
-<?php
-if(isset($_GET['posted'])==true){
-	echo "<p class ='success'>Posted Sucessfully!</p>";
-}
 
-if(isset($_GET['upvoted'])==true){
-	echo "<p class ='success'>Already Upvoted!</p>";
-}
- ?>
-
-	<!--
-	<p class='title'>Posts</p>
-  <p class='title2'>Check Out Whats New!</p>
-  <hr>
--->
-
-<!--
-<div class='containerLR'>
-	<p class='title33'>Write your thoughts!</p>
-	<textarea style="width:320px;"></textarea>
-</div>
--->
-<div class="master-container">
-
-	<?php
-	require_once('getuserComments.php');
-	getMyComments();
-
-	 ?>
-</div>
 </body>
 </html>
