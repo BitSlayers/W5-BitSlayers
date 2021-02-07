@@ -36,7 +36,7 @@ if(!isset($_SESSION['email'])){
 <br>
 <p class="posttitle" style="">Welcome to EduPortal!</p>
 <form method="POST" id="form1">
-	<hr width='350px'>
+	<hr width='200px'>
 	<p class="postcontent" style="">MAKE A POST</p>
 	<a class="btnLike" href="post.php">DISCUSSION</a>
 	<a class="btnLike" href="post_project.php">PROJECTS</a>
@@ -45,7 +45,7 @@ if(!isset($_SESSION['email'])){
 
 <form action='search.php' method="POST" id="form1">
   <p class="postcontent" style="">SEARCH POSTS</p>
-  <input type="text" class="form-control" name="srch" id='title'>
+  <input type="text" class="form-control" name="srch" id='title' width="50px">
   <br>
 	<button type="submit" class="btn btn-primary" id='lgn'>Go</button>
 </form>
@@ -55,7 +55,7 @@ if(!isset($_SESSION['email'])){
 	<a class="btnLike" href="home.php?newest=1">NEWEST</a>
 	<a class="btnLike" href="home.php?popular=1">POPULAR</a>
 	<a class="btnLike" href="home.php?projects=1">PROJECTS</a>
-	<hr width='350px'>
+	<hr width='200px'>
 	</form>
 
 </div>

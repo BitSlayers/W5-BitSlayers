@@ -7,6 +7,8 @@ if(isset($_GET['id']))
   $id=(int)$_GET['id'];
 
   $s = "DELETE FROM postcomments WHERE email = '$user' AND postid = '$id'";
+  //$s = "DELETE FROM postcomments WHERE postid = '$id'";
+
 
   $result=mysqli_query($con,$s);
 

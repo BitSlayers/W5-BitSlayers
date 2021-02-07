@@ -4,7 +4,27 @@ function getPosts(){
   $con = mysqli_connect("localhost","root","","posts");
   $query = "select * from posttable order by likes desc";
   $result=mysqli_query($con,$query);
+//echo $_SESSION["email"];
   while($row=mysqli_fetch_array($result)){
+    if($_SESSION['email']==='admin'){
+      echo '
+      <div class="container">
+      <h3 class="posttitle">'.$row['title'].'</h3>
+      <p class="postcontent">Posted By : '.$row['author'].'</p>
+      <br>
+      <hr width="200px">
+      <p class="postcontent">'.$row['content'].'<p>
+      <img src="uploads/'.$row['image'].'"class="imgt" ?>
+      <br>
+      <div class ="interact">
+      <a class="btnLike" href="like.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
+      <a class="btnLike" href="comment.php?id='.$row["id"].'"></span>COMMENT</a>
+      <a class="btnLike" href="delete.php?id='.$row["id"].'"></span>DELETE</a>
+      </div>
+      </div>
+      ';
+    }
+    else{
     echo '
     <div class="container">
     <h3 class="posttitle">'.$row['title'].'</h3>
@@ -20,6 +40,7 @@ function getPosts(){
     </div>
     </div>
     ';
+   }
   }
 }
 
@@ -28,6 +49,25 @@ function getNewPosts(){
   $query = "select * from posttable order by id desc";
   $result=mysqli_query($con,$query);
   while($row=mysqli_fetch_array($result)){
+    if($_SESSION['email']==='admin'){
+      echo '
+      <div class="container">
+      <h3 class="posttitle">'.$row['title'].'</h3>
+      <p class="postcontent">Posted By : '.$row['author'].'</p>
+      <br>
+      <hr width="200px">
+      <p class="postcontent">'.$row['content'].'<p>
+      <img src="uploads/'.$row['image'].'"class="imgt" ?>
+      <br>
+      <div class ="interact">
+      <a class="btnLike" href="like.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
+      <a class="btnLike" href="comment.php?id='.$row["id"].'"></span>COMMENT</a>
+      <a class="btnLike" href="delete.php?id='.$row["id"].'"></span>DELETE</a>
+      </div>
+      </div>
+      ';
+    }
+    else{
     echo '
     <div class="container">
     <h3 class="posttitle">'.$row['title'].'</h3>
@@ -43,14 +83,34 @@ function getNewPosts(){
     </div>
     </div>
     ';
+   }
   }
 }
+
 
 function getProjects(){
   $con = mysqli_connect("localhost","root","","posts");
   $query = "select * from projecttable2 order by id desc";
   $result=mysqli_query($con,$query);
   while($row=mysqli_fetch_array($result)){
+    if($_SESSION['email']==='admin'){
+      echo '
+      <div class="container">
+      <h3 class="posttitle">'.$row['title'].'</h3>
+      <p class="postcontent">Posted By : '.$row['author'].'</p>
+      <br>
+      <hr width="200px">
+      <p class="postcontent">'.$row['content'].'<p>
+      <br>
+      <div class ="interact">
+      <a class="btnLike" href="like.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
+      <a class="btnLike" href="comment_proj.php?id='.$row["id"].'"></span>COMMENT</a>
+      <a class="btnLike" href="deleteProj.php?id='.$row["id"].'"></span>DELETE</a>
+      </div>
+      </div>
+      ';
+    }
+    else{
     echo '
     <div class="container">
     <h3 class="posttitle">'.$row['title'].'</h3>
@@ -60,11 +120,12 @@ function getProjects(){
     <p class="postcontent">'.$row['content'].'<p>
     <br>
     <div class ="interact">
-    <a class="btnLike" href="like_proj.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
-    <a class="btnLike" href="comment_proj.php?id='.$row["id"].'"></span>COMMENT</a>
+    <a class="btnLike" href="like.php?id='.$row["id"].'"><span>('.$row["likes"].') </span>UPVOTE</a>
+    <a class="btnLike2" href="comment_proj.php?id='.$row["id"].'"></span>COMMENT</a>
     </div>
     </div>
     ';
+   }
   }
 }
 

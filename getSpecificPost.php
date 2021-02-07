@@ -47,7 +47,7 @@ function getSpecificPosts(){
       if($_SESSION['email']===$row2['email'])
       {
         echo '
-        <a class="btnLike" style="width:6%;" href="deleteComment.php?id='.$row["id"].'">DELETE</a>
+        <button type="submit" class="btn btn-primary" id="lgn"><a class="btnLike" style="width:6%;" href="deleteComment.php?id='.$row["id"].'">DELETE</a></button>
         <br>
         </div>
         ';
@@ -100,25 +100,29 @@ function getSpecificProj(){
 
     $result2=mysqli_query($con,$query2);
     while($row2=mysqli_fetch_array($result2)){
+      if($_SESSION['email']===$row2['email'])
+      {
       echo '
       <div class="searchbar">
       <h3 class="cmname">'.$row2['email'].'</h3>
       <h3 class="cmname">'.$row2['dates'].'</h3>
       <hr width="200px">
       <p class="cmcontent">'.$row2['comment'].'</p>
+      <button type="submit" class="btn btn-primary" id="lgn"><a class="btnLike2" href="deleteComment_proj.php?id='.$row["id"].'">DELETE</a></button>
+      <br>
+      </div>
       ';
-      if($_SESSION['email']===$row2['email'])
-      {
-        echo '
-        <a class="btnLike" style="width:6%;" href="deleteComment_proj.php?id='.$row["id"].'">DELETE</a>
-        <br>
-        </div>
-        ';
       }
       else{
-        echo'
-        </div>';
-      }
+        echo '
+        <div class="searchbar">
+        <h3 class="cmname">'.$row2['email'].'</h3>
+        <h3 class="cmname">'.$row2['dates'].'</h3>
+        <hr width="200px">
+        <p class="cmcontent">'.$row2['comment'].'</p>
+        <br>
+        </div>
+        ';      }
   }
 }
 }

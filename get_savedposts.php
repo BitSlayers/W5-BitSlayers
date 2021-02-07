@@ -69,7 +69,7 @@ function getMyComments(){
     if($_SESSION['email']===$row2['email'])
     {
       echo '
-      <a class="btnLike" style="width:6%;" href="deleteComment.php?id='.$row2["postid"].'">DELETE</a>
+      <button type="submit" class="btn btn-primary" id="lgn"><a class="btnLike" style="width:6%;" href="deleteComment.php?id='.$row2["postid"].'">DELETE</a></button>
       <br>
       </div>
       ';
@@ -97,7 +97,7 @@ function getMyProjComments(){
     if($_SESSION['email']===$row2['email'])
     {
       echo '
-      <a class="btnLike" style="width:6%;" href="deleteComment.php?id='.$row2["postid"].'">DELETE</a>
+      <button type="submit" class="btn btn-primary" id="lgn"><a class="btnLike" style="width:6%;" href="deleteComment.php?id='.$row2["postid"].'">DELETE</a></button>
       <br>
       </div>
       ';
