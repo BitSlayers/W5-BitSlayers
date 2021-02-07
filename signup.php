@@ -25,15 +25,18 @@
   <form action='registration.php' method="POST">
   	<div class="formgroup">
       <label for="Email">Email</label>
-  		<input type="text" class="form-control" name="email" id="email">
+  		<input type="text" class="form-control" name="email" id="email" required >
       <br>
       <label for="Password">Password</label>
-  		<input type="password" class="form-control" name="password" id="password">
+  		<input type="password" class="form-control" name="password" id="password" required>
       <br>
       <label for="Password">Confirm Password</label>
-      <input type="cpassword" class="form-control" name="cpassword" id="cpassword">
+      <input type="password" class="form-control" name="cpassword" id="cpassword" required>
       <br>
     <button type="submit" class="btn btn-primary" id='lgn'>Register</button>
+	  <br>
+	  <a href="index.php">Already have an account? Login</a> 
+	
     </div>
   </form>
   <?php

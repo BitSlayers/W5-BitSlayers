@@ -34,12 +34,13 @@ $randIndex = array_rand($quotes);
   <form action="login.php" method="post">
   	<div class="formgroup">
       <label for="Username">Username</label>
-    		<input type="text" class="form-control" name="email" id="email">
+    		<input type="text" class="form-control" name="email" id="email" required>
       <br>
       <label for="Password">Password</label>
-  		<input type="password" class="form-control" name="password" id="password">
+  		<input type="password" class="form-control" name="password" id="password" required>
       <br>
     <button type="submit" class="btn btn-primary" id='lgn'>Login</button>
+	  
     </div>
   </form>
   <?php
