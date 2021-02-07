@@ -32,16 +32,13 @@ if(!isset($_SESSION['email'])){
 
 <div class="container">
 	<p class='title'>New Post</p>
-  <p class='title2'>Write your thoughts!</p>
+  <p class='title2'>Ideal for Posting Doubts and Images</p>
   <br>
   <form action='insert_post.php' method="POST"  enctype="multipart/form-data" id="form1">
   	<div class="formgroup">
       <label for="Title">Title</label>
   		<input type="text" class="form-control" name="title" id='title'>
       <br>
-      <label for="content">Content</label>
-			<textarea class="contentField" name="content" rows="4" cols="50" id="textarea"></textarea>
-
 		<!--
 		<input type="text" class="form-control" name="content" placeholder="Content">
 	-->

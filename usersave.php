@@ -38,7 +38,13 @@ if(!isset($_SESSION['email'])){
 	<a class="btnLike" href="usersave.php">DISCUSSIONS</a>
 	<a class="btnLike" href="usersave.php?comment=1">COMMENTS</a>
 	<a class="btnLike" href="usersave.php?projects=1">PROJECTS</a>
-	<hr width='250px'>
+</form>
+<form method="POST" id="form1">
+	<hr width='200px'>
+	<p class="postcontent" style="">MAKE A POST</p>
+	<a class="btnLike" href="post.php">DISCUSSION</a>
+	<a class="btnLike" href="post_project.php">PROJECTS</a>
+	<br><br>
 </form>
 </div>
 
