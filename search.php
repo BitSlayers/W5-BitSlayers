@@ -22,7 +22,7 @@ session_start();
 <div class="topnav">
     <a class="active" style="float:left;color:#191919" href="home.php"><?php echo $_SESSION["email"];?>'s Home</a>
 		<a href="logout.php" id="lgo">Logout</a>
-		<a href="usersave.php">My Posts</a>
+		<a href="usersave.php">Profile</a>
     <a href="post.php">New Post</a>
 		</div>
 </div>

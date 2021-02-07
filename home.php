@@ -26,15 +26,25 @@ if(!isset($_SESSION['email'])){
 <div class="topnav">
     <a class="active" style="float:left;color:#191919" href="home.php"><?php echo $_SESSION["email"];?>'s Home</a>
 		<a href="logout.php" id="lgo">Logout</a>
-		<a href="usersave.php">My Posts</a>
+		<a href="usersave.php">Profile</a>
     <a href="post.php">New Post</a>
 		</div>
 </div>
 
 <div class="searchbar">
-<form action='search.php' method="POST" id="form1">
+<form method="POST" id="form1">
 	<br>
-  <p class="posttitle" style="">SEARCH</p>
+	<p class="posttitle" style="">Welcome to EduPortal!</p>
+	<hr width='200px'>
+	<p class="postcontent" style="">FILTER POSTS BY</p>
+	<a class="btnLike" href="home.php?newest=1">NEWEST</a>
+	<a class="btnLike" href="home.php">POPULAR</a>
+
+	<hr width='200px'>
+</form>
+
+<form action='search.php' method="POST" id="form1">
+  <p class="postcontent" style="">SEARCH POSTS</p>
   <input type="text" class="form-control" name="srch" id='title'>
   <br>
 	<button type="submit" class="btn btn-primary" id='lgn'>Go</button>
@@ -48,6 +58,11 @@ if(isset($_GET['posted'])==true){
 
 if(isset($_GET['upvoted'])==true){
 	echo "<p class ='success'>Already Upvoted!</p>";
+}
+
+if(isset($_GET['newest'])==true){
+	require_once('get_post.php');
+	getNewPosts();
 }
  ?>
 
@@ -64,13 +79,9 @@ if(isset($_GET['upvoted'])==true){
 </div>
 -->
 <div class="master-container">
-
 	<?php
 	require_once('get_post.php');
 	getPosts();
-
-
-
 
 	 ?>
 </div>

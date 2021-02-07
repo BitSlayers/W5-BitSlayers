@@ -41,8 +41,6 @@ if(!isset($_SESSION['email'])){
 	<hr width='200px'>
 </form>
 </div>
-
-
 <?php
 if(isset($_GET['posted'])==true){
 	echo "<p class ='success'>Posted Sucessfully!</p>";
@@ -68,9 +66,8 @@ if(isset($_GET['upvoted'])==true){
 <div class="master-container">
 
 	<?php
-	require_once('get_savedposts.php');
-	getMyPosts();
-
+	require_once('getuserComments.php');
+	getMyComments();
 
 	 ?>
 </div>
